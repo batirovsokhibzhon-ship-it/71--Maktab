@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>71-sonli boshlang'ich ta'lim maktabi</title>
+    <!-- Google Fonts va FontAwesome ikonkalari -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #1e293b;
+        }
+
+        /* Hero Header bilan orqa fon расми */
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), 
+                        url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat fixed;
+            color: white;
+            text-align: center;
+            padding: 90px 20px 70px;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+            margin-bottom: 25px;
+        }
+
+        .btn-main {
+            background: #2563eb;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+            transition: 0.3s;
+        }
+
+        .btn-main:hover {
+            background: #1d4ed8;
+            transform: translateY(-2px);
+        }
+
+        /* Navigatsiya */
+        nav {
+            background: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+        }
+
+        nav a {
+            color: #334155;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #2563eb;
+        }
+
+        /* Контейнер ва карточкалар */
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #0f172a;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: #2563eb;
+            display: block;
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 50px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-body h3 {
+            font-size: 1.2rem;
+            color: #1e293b;
+            margin-bottom: 10px;
+        }
+
+        .card-body p {
+            color: #64748b;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Banner qismi orqa fon rasmi bilan */
+        .banner-section {
+            background: linear-gradient(rgba(37, 99, 235, 0.85), rgba(30, 58, 138, 0.85)), 
+                        url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            color: white;
+            padding: 50px 20px;
+            border-radius: 20px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .banner-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        /* Contact qismi */
+        .contact-info {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .contact-item i {
+            font-size: 1.3rem;
+            color: #2563eb;
+            background: #eff6ff;
+            padding: 12px;
+            border-radius: 50%;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 25px;
+            font-size: 0.9rem;
+        }
+
+        footer strong {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="hero">
+        <h1>71-Sonli Boshlang'ich Ta'lim Maktabi</h1>
+        <p>Shahrixon tumani | Sifatli ta'lim va yuksak tarbiya maskani</p>
+        <a href="#contact" class="btn-main"><i class="fa-solid fa-paper-plane"></i> Bog'lanish</a>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#about"><i class="fa-solid fa-school"></i> Biz haqimizda</a>
+        <a href="#news"><i class="fa-solid fa-newspaper"></i> Yangiliklar</a>
+        <a href="#contact"><i class="fa-solid fa-phone"></i> Aloqa</a>
+    </nav>
+
+    <div class="container">
+        
+        <!-- Biz haqimizda -->
+        <section id="about">
+            <h2 class="section-title">Bizning Maktab</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80" alt="Sinfxona">
+                    <div class="card-body">
+                        <h3>Zamonaviy Sinfxonalar</h3>
+                        <p>O'quvchilar uchun barcha qulayliklarga ega, yorug' va shinam boshlang'ich sinfxonalar.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80" alt="O'qituvchi va o'quvchilar">
+                    <div class="card-body">
+                        <h3>Tajribali O'qituvchilar</h3>
+                        <p>O'z kasbining fidoiylari bo'lgan, oliy ma'lumotli va tajribali pedagoglar jamoasi.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80" alt="Kitoblar">
+                    <div class="card-body">
+                        <h3>A'lo Kayfiyat va Tarbiya</h3>
+                        <p>Har bir bolaga individual yondashuv hamda qiziqarli to'garak va mashg'ulotlar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Banner -->
+        <div class="banner-section">
+            <h2>1-Sinfga Qabul Boshlandi!</h2>
+            <p>Hujjatlarni topshirish va batafsil ma'lumot olish uchun maktab ma'muriyatiga murojaat qiling.</p>
+        </div>
+
+        <!-- Yangiliklar -->
+        <section id="news">
+            <h2 class="section-title">So'nggi E'lonlar</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-body">
+                        <h3>📌 Ota-onalar Majlisi</h3>
+                        <p>Joriy haftaning shanba kuni soat 10:00 da barcha boshlang'ich sinflar uchun ota-onalar majlisi bo'lib o'tadi.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h3>🎨 "Iqtidorli Qo'llar" Ko'rgazmasi</h3>
+                        <p>Maktabimiz o'quvchilari o'rtasida tasviriy san'at va qo'l mehnati bo'yicha tanlov tashkil etildi.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Aloqa -->
+        <section id="contact">
+            <h2 class="section-title">Biz Bilan Bog'lanish</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div>
+                        <strong>Manzil:</strong>
+                        <p>Andijon viloyati, Shahrixon tumani</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div>
+                        <strong>Telefon:</strong>
+                        <p>+998 (90) 000-00-00</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-clock"></i>
+                    <div>
+                        <strong>Ish vaqti:</strong>
+                        <p>Dushanba - Shanba: 08:00 - 17:00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 <strong>71-sonli boshlang'ich ta'lim maktabi</strong>. Barcha huquqlar himoyalangan.</p>
+    </footer>
+
+</body>
+  </html>
