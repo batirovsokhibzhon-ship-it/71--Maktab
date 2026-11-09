@@ -3,315 +3,579 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>71-sonli boshlang'ich ta'lim maktabi</title>
-    <!-- Google Fonts va FontAwesome ikonkalari -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <title>71-sonli Boshlangʻich Ta'lim Maktabi</title>
     <style>
+        :root {
+            --primary-color: #1a5f7a;
+            --secondary-color: #002b5b;
+            --accent-color: #f9d949;
+            --light-bg: #f8f9fa;
+            --dark-text: #2b2b2b;
+            --card-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Poppins', sans-serif;
-            scroll-behavior: smooth;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
         body {
-            background-color: #f8fafc;
-            color: #1e293b;
-        }
-
-        /* Hero Header bilan orqa fon расми */
-        .hero {
-            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), 
-                        url('https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat fixed;
-            color: white;
-            text-align: center;
-            padding: 90px 20px 70px;
-        }
-
-        .hero h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            color: #cbd5e1;
-            margin-bottom: 25px;
-        }
-
-        .btn-main {
-            background: #2563eb;
-            color: white;
-            padding: 12px 28px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
-            transition: 0.3s;
-        }
-
-        .btn-main:hover {
-            background: #1d4ed8;
-            transform: translateY(-2px);
-        }
-
-        /* Navigatsiya */
-        nav {
-            background: #ffffff;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
-        }
-
-        nav a {
-            color: #334155;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: #2563eb;
-        }
-
-        /* Контейнер ва карточкалар */
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 40px 20px;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 1.8rem;
-            color: #0f172a;
-            margin-bottom: 30px;
+            background-color: var(--light-bg);
+            color: var(--dark-text);
+            line-height: 1.6;
             position: relative;
         }
 
-        .section-title::after {
-            content: '';
-            width: 60px;
-            height: 4px;
-            background: #2563eb;
-            display: block;
-            margin: 8px auto 0;
-            border-radius: 2px;
+        /* Орқа фондаги логотип (Watermark) */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70vw;
+            height: 70vw;
+            max-width: 550px;
+            max-height: 550px;
+            background-image: url('logo.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            opacity: 0.08; /* Орқа фондаги тиниқлик даражаси */
+            z-index: -1;
+            pointer-events: none;
         }
 
-        .grid {
+        header {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .logo-img {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent-color);
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .motto-banner {
+            background-color: var(--accent-color);
+            color: var(--secondary-color);
+            padding: 0.75rem;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            background-color: var(--primary-color);
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: white;
+            padding: 1rem 1.2rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.92); /* Бўлимлар фони шаффофроқ қилинди */
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--card-shadow);
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--accent-color);
+            display: inline-block;
+            padding-bottom: 0.3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .grid-3 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-bottom: 50px;
+            gap: 1.5rem;
         }
 
         .card {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            transition: 0.3s;
+            background: rgba(253, 253, 253, 0.95);
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.2s;
         }
 
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
-        .card img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-
-        .card-body {
-            padding: 20px;
-        }
-
-        .card-body h3 {
+        .card-title {
+            font-weight: bold;
             font-size: 1.2rem;
-            color: #1e293b;
-            margin-bottom: 10px;
+            color: var(--secondary-color);
+            margin-bottom: 0.5rem;
         }
 
-        .card-body p {
-            color: #64748b;
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        /* Banner qismi orqa fon rasmi bilan */
-        .banner-section {
-            background: linear-gradient(rgba(37, 99, 235, 0.85), rgba(30, 58, 138, 0.85)), 
-                        url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+        .class-badge {
+            background: var(--primary-color);
             color: white;
-            padding: 50px 20px;
-            border-radius: 20px;
-            text-align: center;
-            margin-bottom: 50px;
+            font-size: 1.3rem;
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            border-radius: 50%;
+            margin: 0 auto 1rem auto;
+            font-weight: bold;
         }
 
-        .banner-section h2 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
+        .quiz-option {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: #edf2f7;
+            border: 1px solid #cbd5e0;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 1rem;
         }
 
-        /* Contact qismi */
-        .contact-info {
-            background: white;
-            padding: 30px;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        .quiz-option:hover {
+            background: #e2e8f0;
         }
 
-        .contact-item {
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            max-width: 400px;
+            margin: 1rem auto;
+        }
+
+        .game-card {
+            height: 80px;
+            background: var(--primary-color);
+            color: white;
             display: flex;
             align-items: center;
-            gap: 15px;
-            margin-bottom: 15px;
+            justify-content: center;
+            font-size: 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
         }
 
-        .contact-item i {
-            font-size: 1.3rem;
-            color: #2563eb;
-            background: #eff6ff;
-            padding: 12px;
-            border-radius: 50%;
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
         }
 
-        /* Footer */
-        footer {
-            background: #0f172a;
-            color: #94a3b8;
-            text-align: center;
-            padding: 25px;
-            font-size: 0.9rem;
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
         }
 
-        footer strong {
+        .rule-list, .uniform-list {
+            list-style-type: none;
+        }
+
+        .rule-list li, .uniform-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .rule-list li::before {
+            content: "✔";
+            position: absolute;
+            left: 0;
+            color: green;
+            font-weight: bold;
+        }
+
+        .admin-panel {
+            display: none;
+            background: #fff3cd;
+            border: 1px solid #ffeeba;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.3rem;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 0.6rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .btn {
+            background: var(--primary-color);
             color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: var(--secondary-color);
+        }
+
+        footer {
+            background: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            nav a {
+                text-align: center;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Section -->
-    <header class="hero">
-        <h1>71-Sonli Boshlang'ich Ta'lim Maktabi</h1>
-        <p>Shahrixon tumani | Sifatli ta'lim va yuksak tarbiya maskani</p>
-        <a href="#contact" class="btn-main"><i class="fa-solid fa-paper-plane"></i> Bog'lanish</a>
+    <header>
+        <img src="logo.jpg" alt="Şahrixon Tumani 71-sonli Maktab Logosi" class="logo-img">
+        <h1 id="school-name">71-sonli Boshlangʻich Ta'lim Maktabi</h1>
+        <p>Kelajak poydevori shu yerdan boshlanadi!</p>
     </header>
 
-    <!-- Navigation -->
+    <div class="motto-banner" id="general-motto">
+        Maktab shiori: "Bilim — kelajak poydevori, odob — inson koʻrki!"
+    </div>
+
     <nav>
-        <a href="#about"><i class="fa-solid fa-school"></i> Biz haqimizda</a>
-        <a href="#news"><i class="fa-solid fa-newspaper"></i> Yangiliklar</a>
-        <a href="#contact"><i class="fa-solid fa-phone"></i> Aloqa</a>
+        <a href="#about">Maktab tarixi</a>
+        <a href="#leadership">Rahbariyat</a>
+        <a href="#classes">Sinflar</a>
+        <a href="#quizzes">Testlar</a>
+        <a href="#games">Oʻyinlar</a>
+        <a href="#cartoons">Multfilmlar</a>
+        <a href="#rules">Odob-axloq va Forma</a>
+        <a href="#admin" onclick="toggleAdminPanel()">⚙️ Admin</a>
     </nav>
 
     <div class="container">
-        
-        <!-- Biz haqimizda -->
-        <section id="about">
-            <h2 class="section-title">Bizning Maktab</h2>
-            <div class="grid">
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=600&q=80" alt="Sinfxona">
-                    <div class="card-body">
-                        <h3>Zamonaviy Sinfxonalar</h3>
-                        <p>O'quvchilar uchun barcha qulayliklarga ega, yorug' va shinam boshlang'ich sinfxonalar.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80" alt="O'qituvchi va o'quvchilar">
-                    <div class="card-body">
-                        <h3>Tajribali O'qituvchilar</h3>
-                        <p>O'z kasbining fidoiylari bo'lgan, oliy ma'lumotli va tajribali pedagoglar jamoasi.</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=600&q=80" alt="Kitoblar">
-                    <div class="card-body">
-                        <h3>A'lo Kayfiyat va Tarbiya</h3>
-                        <p>Har bir bolaga individual yondashuv hamda qiziqarli to'garak va mashg'ulotlar.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Banner -->
-        <div class="banner-section">
-            <h2>1-Sinfga Qabul Boshlandi!</h2>
-            <p>Hujjatlarni topshirish va batafsil ma'lumot olish uchun maktab ma'muriyatiga murojaat qiling.</p>
+        <!-- ADMIN PANEL -->
+        <div id="adminPanel" class="admin-panel">
+            <h3>⚙️ Admin Panel (Ma'lumotlarni boshqarish)</h3>
+            <p style="margin-bottom: 1rem; color: #856404;">Bu yerda sitedagi ayrim ma'lumotlarni tezda oʻzgartirishingiz mumkin.</p>
+            
+            <div class="form-group">
+                <label>Maktab nomini oʻzgartirish:</label>
+                <input type="text" id="editSchoolName" value="71-sonli Boshlangʻich Ta'lim Maktabi">
+            </div>
+            
+            <div class="form-group">
+                <label>Umumiy maktab shiorini oʻzgartirish:</label>
+                <input type="text" id="editGeneralMotto" value='Maktab shiori: "Bilim — kelajak poydevori, odob — inson koʻrki!"'>
+            </div>
+
+            <button class="btn" onclick="saveAdminChanges()">Saqlash</button>
         </div>
 
-        <!-- Yangiliklar -->
-        <section id="news">
-            <h2 class="section-title">So'nggi E'lonlar</h2>
-            <div class="grid">
+        <!-- ABOUT SECTION -->
+        <section id="about">
+            <h2>Maktab Tarixi</h2>
+            <p id="school-history">
+                71-sonli boshlangʻich ta'lim maktabi koʻp yillardan buyon yosh avlodga sifatli boshlangʻich ta'lim va mustahkam tarbiya berib kelmoqda. Maktabimizda oʻquvchilarning intellektual va ma'naviy rivojlanishi uchun barcha sharoitlar yaratilgan. Tajribali va mehribon pedagoglar jamoasi har bir bolaning iqtidorini ochishga intiladi.
+            </p>
+        </section>
+
+        <!-- LEADERSHIP -->
+        <section id="leadership">
+            <h2>Maktab Rahbariyati</h2>
+            <div class="grid-3">
                 <div class="card">
-                    <div class="card-body">
-                        <h3>📌 Ota-onalar Majlisi</h3>
-                        <p>Joriy haftaning shanba kuni soat 10:00 da barcha boshlang'ich sinflar uchun ota-onalar majlisi bo'lib o'tadi.</p>
-                    </div>
+                    <div class="card-title">N. Tojiboyeva</div>
+                    <p style="color: #666;">Maktab direktori</p>
                 </div>
                 <div class="card">
-                    <div class="card-body">
-                        <h3>🎨 "Iqtidorli Qo'llar" Ko'rgazmasi</h3>
-                        <p>Maktabimiz o'quvchilari o'rtasida tasviriy san'at va qo'l mehnati bo'yicha tanlov tashkil etildi.</p>
+                    <div class="card-title">O. Bozorov</div>
+                    <p style="color: #666;">Oʻquv ishlar boʻyicha direktor oʻrinbosari</p>
+                </div>
+                <div class="card">
+                    <div class="card-title">S. Yunusov</div>
+                    <p style="color: #666;">Ma'naviy-ma'rifiy ishlar boʻyicha direktor oʻrinbosari</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CLASSES AND MOTTOS -->
+        <section id="classes">
+            <h2>Sinflar va Ularning Shiorlari</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="class-badge">1-A</div>
+                    <p><em>"Shijoatli va intiluvchan oʻquvchilar!"</em></p>
+                </div>
+                <div class="card">
+                    <div class="class-badge">1-B</div>
+                    <p><em>"Doʻstlik va ahillik — bizning kuchimiz!"</em></p>
+                </div>
+                <div class="card">
+                    <div class="class-badge">2-A</div>
+                    <p><em>"Odob-axloq va bilimda yetakchimiz!"</em></p>
+                </div>
+                <div class="card">
+                    <div class="class-badge">2-B</div>
+                    <p><em>"Har bir kun — yangi marra va muvaffaqiyat!"</em></p>
+                </div>
+                <div class="card">
+                    <div class="class-badge">2-D</div>
+                    <p><em>"Zukkolik va topqirlikda tengsizmiz!"</em></p>
+                </div>
+                <div class="card">
+                    <div class="class-badge">3-A</div>
+                    <p><em>"Kelajak buyuk insonlari shu sinfda!"</em></p>
+                </div>
+                <div class="card">
+                    <div class="class-badge">3-B</div>
+                    <p><em>"Birdamlik va yuqori marralar sari!"</em></p>
+                </div>
+                <div class="card">
+                    <div class="class-badge">4-A</div>
+                    <p><em>"Maktabimiz faxri va eng a'lochi sinfi!"</em></p>
+                </div>
+                <div class="card">
+                    <div class="class-badge">4-B</div>
+                    <p><em>"Ilm va odobda hammaga namuna!"</em></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUIZZES -->
+        <section id="quizzes">
+            <h2>Fanlar Boʻyicha Onlayn Testlar</h2>
+            <div id="quiz-box">
+                <h3 id="quiz-question">Matematika: 7 + 8 necha boʻladi?</h3>
+                <div id="quiz-options" style="margin-top: 1rem;">
+                    <button class="quiz-option" onclick="checkAnswer(false)">A) 13</button>
+                    <button class="quiz-option" onclick="checkAnswer(true)">B) 15</button>
+                    <button class="quiz-option" onclick="checkAnswer(false)">C) 16</button>
+                </div>
+                <p id="quiz-result" style="margin-top: 1rem; font-weight: bold;"></p>
+            </div>
+        </section>
+
+        <!-- GAMES -->
+        <section id="games">
+            <h2>Bolalar Uchun Qiziqarli Xotira Oʻyini</h2>
+            <p>Bir xil sonlarni toping va xotirangizni sinang!</p>
+            <div class="game-grid" id="gameGrid">
+                <!-- Game cards inserted by JavaScript -->
+            </div>
+            <p id="gameStatus" style="text-align: center; font-weight: bold; margin-top: 1rem;"></p>
+        </section>
+
+        <!-- CARTOONS -->
+        <section id="cartoons">
+            <h2>Tarbiyaviy Multfilmlar</h2>
+            <div class="grid-3">
+                <div>
+                    <h4 style="margin-bottom: 0.5rem;">Odobli bolakay</h4>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Tarbiyaviy Multfilm" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 0.5rem;">Halollik va Ezgulik</h4>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Tarbiyaviy Multfilm" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Aloqa -->
-        <section id="contact">
-            <h2 class="section-title">Biz Bilan Bog'lanish</h2>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <div>
-                        <strong>Manzil:</strong>
-                        <p>Andijon viloyati, Shahrixon tumani</p>
-                    </div>
+        <!-- RULES AND UNIFORM -->
+        <section id="rules">
+            <h2>Odob-axloq Qoidalari va Maktab Formasi</h2>
+            <div class="grid-3">
+                <div>
+                    <h3 style="color: var(--secondary-color); margin-bottom: 1rem;">Odob-axloq Qoidalari:</h3>
+                    <ul class="rule-list">
+                        <li>Maktabga oʻz vaqtida, toza va tartibli kiyinib kelish.</li>
+                        <li>Ustozlar va kattalarga hurmat bilan muomala qilish ("Assalomu alaykum").</li>
+                        <li>Sinfda tinchlikni saqlash va darsga xalaqit bermaslik.</li>
+                        <li>Maktab mulkini asrab-avaylash.</li>
+                        <li>Tengdoshlarga nisbatan xushmuomala va yordamsevar boʻlish.</li>
+                    </ul>
                 </div>
-                <div class="contact-item">
-                    <i class="fa-solid fa-phone"></i>
-                    <div>
-                        <strong>Telefon:</strong>
-                        <p>+998 (90) 000-00-00</p>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <i class="fa-solid fa-clock"></i>
-                    <div>
-                        <strong>Ish vaqti:</strong>
-                        <p>Dushanba - Shanba: 08:00 - 17:00</p>
-                    </div>
+                <div>
+                    <h3 style="color: var(--secondary-color); margin-bottom: 1rem;">Maktab Formasi Talablari:</h3>
+                    <ul class="uniform-list">
+                        <li><strong>Oʻgʻil bolalar uchun:</strong> Toʻq koʻk rangli shim va пижак, oq koʻylak, qora poyabzal.</li>
+                        <li><strong>Qiz bolalar uchun:</strong> Toʻq koʻk rangli yubka va пижак (yoki sarafan), oq bluzka.</li>
+                        <li>Sochlar tartibli va yigʻilgan holatda boʻlishi lozim.</li>
+                        <li>Sport darslari uchun maxsus sport kiyimi talab etiladi.</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
     </div>
 
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 <strong>71-sonli boshlang'ich ta'lim maktabi</strong>. Barcha huquqlar himoyalangan.</p>
+        <p>&copy; 71-sonli Boshlangʻich Ta'lim Maktabi. Barcha huquqlar himoyalangan.</p>
     </footer>
 
+    <script>
+        // Quiz System
+        function checkAnswer(isCorrect) {
+            const resultElem = document.getElementById('quiz-result');
+            if(isCorrect) {
+                resultElem.style.color = "green";
+                resultElem.textContent = "Barakalla! Toʻgʻri javob! 🎉";
+            } else {
+                resultElem.style.color = "red";
+                resultElem.textContent = "Notoʻgʻri, qaytadan harakat qilib koʻring! ❌";
+            }
+        }
+
+        // Simple Memory Game
+        const numbers = [1, 1, 2, 2, 3, 3, 4, 4];
+        let flippedCards = [];
+        let matchedPairs = 0;
+
+        function shuffle(array) {
+            return array.sort(() => Math.random() - 0.5);
+        }
+
+        function initGame() {
+            const grid = document.getElementById('gameGrid');
+            grid.innerHTML = '';
+            const shuffled = shuffle([...numbers]);
+            
+            shuffled.forEach((num, index) => {
+                const card = document.createElement('div');
+                card.className = 'game-card';
+                card.dataset.number = num;
+                card.dataset.index = index;
+                card.textContent = '?';
+                card.onclick = () => flipCard(card);
+                grid.appendChild(card);
+            });
+        }
+
+        function flipCard(card) {
+            if (flippedCards.length < 2 && !card.classList.contains('flipped')) {
+                card.textContent = card.dataset.number;
+                card.classList.add('flipped');
+                card.style.background = '#002b5b';
+                flippedCards.push(card);
+
+                if (flippedCards.length === 2) {
+                    checkMatch();
+                }
+            }
+        }
+
+        function checkMatch() {
+            const [card1, card2] = flippedCards;
+            if (card1.dataset.number === card2.dataset.number) {
+                matchedPairs++;
+                flippedCards = [];
+                if (matchedPairs === 4) {
+                    document.getElementById('gameStatus').textContent = 'Tabriklaymiz! Siz gʻalaba qozondingiz! 🏆';
+                }
+            } else {
+                setTimeout(() => {
+                    card1.textContent = '?';
+                    card2.textContent = '?';
+                    card1.style.background = '#1a5f7a';
+                    card2.style.background = '#1a5f7a';
+                    card1.classList.remove('flipped');
+                    card2.classList.remove('flipped');
+                    flippedCards = [];
+                }, 1000);
+            }
+        }
+
+        // Admin Panel Toggle
+        function toggleAdminPanel() {
+            const password = prompt("Admin panelga kirish uchun parolni kiriting:");
+            if (password === "admin123") {
+                const panel = document.getElementById('adminPanel');
+                panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
+            } else if (password !== null) {
+                alert("Notoʻgʻri parol!");
+            }
+        }
+
+        function saveAdminChanges() {
+            const newName = document.getElementById('editSchoolName').value;
+            const newMotto = document.getElementById('editGeneralMotto').value;
+
+            if(newName) document.getElementById('school-name').textContent = newName;
+            if(newMotto) document.getElementById('general-motto').textContent = newMotto;
+
+            alert("Ma'lumotlar muvaffaqiyatli saqlandi!");
+        }
+
+        // Initialize Game on Load
+        window.onload = initGame;
+    </script>
 </body>
-  </html>
+</html>
