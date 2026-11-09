@@ -6,12 +6,12 @@
     <title>71-sonli Boshlangʻich Ta'lim Maktabi</title>
     <style>
         :root {
-            --primary-color: #1a5f7a;
-            --secondary-color: #002b5b;
-            --accent-color: #f9d949;
-            --light-bg: #f8f9fa;
-            --dark-text: #2b2b2b;
-            --card-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            --primary-color: #ff6b6b;
+            --secondary-color: #4d96ff;
+            --accent-color: #ffd93d;
+            --light-bg: #f7f9fc;
+            --dark-text: #2d3748;
+            --card-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         * {
@@ -22,10 +22,11 @@
         }
 
         body {
-            background-color: var(--light-bg);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             color: var(--dark-text);
-            line-height: 1.6;
+            line-height: 1.5;
             position: relative;
+            min-height: 100vh;
         }
 
         /* Орқа фондаги логотип (Watermark) */
@@ -37,105 +38,124 @@
             transform: translate(-50%, -50%);
             width: 70vw;
             height: 70vw;
-            max-width: 550px;
-            max-height: 550px;
+            max-width: 500px;
+            max-height: 500px;
             background-image: url('logo.jpg');
             background-repeat: no-repeat;
             background-position: center;
             background-size: contain;
-            opacity: 0.08; /* Орқа фондаги тиниқлик даражаси */
+            opacity: 0.06;
             z-index: -1;
             pointer-events: none;
         }
 
         header {
-            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-            color: white;
-            padding: 2rem 1rem;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 99%);
+            color: #fff;
+            padding: 1.5rem 1rem;
             text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
         }
 
         .logo-img {
-            width: 110px;
-            height: 110px;
+            width: 90px;
+            height: 90px;
             border-radius: 50%;
             object-fit: cover;
-            border: 3px solid var(--accent-color);
-            margin-bottom: 1rem;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            border: 3px solid white;
+            margin-bottom: 0.5rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
 
         header h1 {
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+            margin-bottom: 0.3rem;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1rem;
+            color: #2d3748;
+            font-weight: bold;
         }
 
         .motto-banner {
-            background-color: var(--accent-color);
-            color: var(--secondary-color);
-            padding: 0.75rem;
+            background: linear-gradient(to right, #ffe259, #ffa751);
+            color: #7c2d12;
+            padding: 0.7rem;
             text-align: center;
             font-weight: bold;
-            font-size: 1.1rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 1rem;
         }
 
+        /* Кичикроқ ва горизонтал меню */
         nav {
-            background-color: var(--primary-color);
+            background-color: var(--secondary-color);
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
+            overflow-x: auto;
             position: sticky;
             top: 0;
             z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            padding: 0.3rem 0;
+        }
+
+        nav::-webkit-scrollbar {
+            display: none; /* Телефонда скролл чизиғини яшириш */
         }
 
         nav a {
             color: white;
-            padding: 1rem 1.2rem;
+            padding: 0.5rem 0.8rem;
             text-decoration: none;
-            font-weight: 500;
-            transition: background 0.3s;
+            font-weight: bold;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            transition: 0.2s;
         }
 
         nav a:hover {
-            background-color: rgba(255,255,255,0.2);
+            background-color: #ff6b6b;
+            border-radius: 4px;
         }
 
         .container {
-            max-width: 1200px;
-            margin: 2rem auto;
+            max-width: 1100px;
+            margin: 1.5rem auto;
             padding: 0 1rem;
         }
 
         section {
-            background: rgba(255, 255, 255, 0.92); /* Бўлимлар фони шаффофроқ қилинди */
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
             box-shadow: var(--card-shadow);
         }
 
         h2 {
-            color: var(--primary-color);
-            border-bottom: 3px solid var(--accent-color);
+            color: var(--secondary-color);
+            border-bottom: 2px dashed var(--accent-color);
             display: inline-block;
-            padding-bottom: 0.3rem;
-            margin-bottom: 1.5rem;
+            padding-bottom: 0.2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
 
         .grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
         }
 
         .card {
-            background: rgba(253, 253, 253, 0.95);
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 1.5rem;
+            background: #fff;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 1.2rem;
             text-align: center;
             transition: transform 0.2s;
         }
@@ -146,51 +166,52 @@
 
         .card-title {
             font-weight: bold;
-            font-size: 1.2rem;
-            color: var(--secondary-color);
-            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            color: #2b6cb0;
+            margin-bottom: 0.3rem;
         }
 
         .class-badge {
-            background: var(--primary-color);
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
             color: white;
-            font-size: 1.3rem;
-            width: 60px;
-            height: 60px;
-            line-height: 60px;
+            font-size: 1.2rem;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
             border-radius: 50%;
-            margin: 0 auto 1rem auto;
+            margin: 0 auto 0.8rem auto;
             font-weight: bold;
         }
 
         .quiz-option {
             display: block;
             width: 100%;
-            padding: 0.75rem;
-            margin: 0.5rem 0;
-            background: #edf2f7;
-            border: 1px solid #cbd5e0;
-            border-radius: 5px;
+            padding: 0.7rem;
+            margin: 0.4rem 0;
+            background: #ebf8ff;
+            border: 2px solid #bee3f8;
+            border-radius: 6px;
             cursor: pointer;
             text-align: left;
             font-size: 1rem;
+            font-weight: 600;
         }
 
         .quiz-option:hover {
-            background: #e2e8f0;
+            background: #bee3f8;
         }
 
         .game-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 10px;
-            max-width: 400px;
+            gap: 8px;
+            max-width: 350px;
             margin: 1rem auto;
         }
 
         .game-card {
-            height: 80px;
-            background: var(--primary-color);
+            height: 70px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
             color: white;
             display: flex;
             align-items: center;
@@ -222,254 +243,223 @@
 
         .rule-list li, .uniform-list li {
             position: relative;
-            padding-left: 2rem;
-            margin-bottom: 0.8rem;
+            padding-left: 1.5rem;
+            margin-bottom: 0.7rem;
+            font-size: 0.95rem;
         }
 
         .rule-list li::before {
-            content: "✔";
+            content: "🌟";
             position: absolute;
             left: 0;
-            color: green;
-            font-weight: bold;
         }
 
+        /* Админ панель */
         .admin-panel {
             display: none;
-            background: #fff3cd;
-            border: 1px solid #ffeeba;
+            background: #fffaf0;
+            border: 2px dashed #ecc94b;
             padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
         }
 
         .form-group {
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.3rem;
+            margin-bottom: 0.2rem;
             font-weight: bold;
+            color: #b7791f;
+            font-size: 0.9rem;
         }
 
-        .form-group input, .form-group textarea, .form-group select {
+        .form-group input, .form-group select {
             width: 100%;
             padding: 0.6rem;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            border: 2px solid #e2e8f0;
+            border-radius: 6px;
+            font-size: 0.9rem;
         }
 
         .btn {
-            background: var(--primary-color);
+            background: #38a169;
             color: white;
             border: none;
-            padding: 0.75rem 1.5rem;
-            border-radius: 5px;
+            padding: 0.7rem 1.5rem;
+            border-radius: 6px;
             cursor: pointer;
             font-weight: bold;
+            font-size: 1rem;
         }
 
         .btn:hover {
-            background: var(--secondary-color);
+            opacity: 0.9;
         }
 
         footer {
-            background: var(--secondary-color);
+            background: #2d3748;
             color: white;
             text-align: center;
             padding: 1.5rem;
             margin-top: 2rem;
         }
-
-        @media (max-width: 768px) {
-            nav {
-                flex-direction: column;
-            }
-            nav a {
-                text-align: center;
-                border-bottom: 1px solid rgba(255,255,255,0.1);
-            }
-        }
     </style>
 </head>
 <body>
 
-    <header>
-        <img src="logo.jpg" alt="Şahrixon Tumani 71-sonli Maktab Logosi" class="logo-img">
+    <header id="siteHeader">
+        <img id="headerLogo" src="logo.jpg" alt="Logo" class="logo-img">
         <h1 id="school-name">71-sonli Boshlangʻich Ta'lim Maktabi</h1>
-        <p>Kelajak poydevori shu yerdan boshlanadi!</p>
+        <p>🌈 Kelajak poydevori shu yerdan boshlanadi! 🚀</p>
     </header>
 
     <div class="motto-banner" id="general-motto">
-        Maktab shiori: "Bilim — kelajak poydevori, odob — inson koʻrki!"
+        ✨ Maktab shiori: "Bilim — kelajak poydevori, odob — inson koʻrki!" ✨
     </div>
 
+    <!-- Горизонтал ва кичикроқ меню -->
     <nav>
-        <a href="#about">Maktab tarixi</a>
-        <a href="#leadership">Rahbariyat</a>
-        <a href="#classes">Sinflar</a>
-        <a href="#quizzes">Testlar</a>
-        <a href="#games">Oʻyinlar</a>
-        <a href="#cartoons">Multfilmlar</a>
-        <a href="#rules">Odob-axloq va Forma</a>
+        <a href="#about">📖 Tarix</a>
+        <a href="#leadership">👑 Rahbariyat</a>
+        <a href="#classes">🎒 Sinflar</a>
+        <a href="#quizzes">🧠 Testlar</a>
+        <a href="#games">🎮 Oʻyinlar</a>
+        <a href="#cartoons">🎈 Multfilmlar</a>
+        <a href="#rules">⭐ Odob va Forma</a>
         <a href="#admin" onclick="toggleAdminPanel()">⚙️ Admin</a>
     </nav>
 
     <div class="container">
 
-        <!-- ADMIN PANEL -->
+        <!-- КЕНГАЙТИРИЛГАН АДМИН ПАНЕЛЬ (Ранг, расм, видео ва матнлар учун) -->
         <div id="adminPanel" class="admin-panel">
-            <h3>⚙️ Admin Panel (Ma'lumotlarni boshqarish)</h3>
-            <p style="margin-bottom: 1rem; color: #856404;">Bu yerda sitedagi ayrim ma'lumotlarni tezda oʻzgartirishingiz mumkin.</p>
+            <h3>⚙️ Toʻliq Admin Panel</h3>
+            <p style="margin-bottom: 1rem; color: #b7791f; font-size: 0.9rem;">Bu yerdan matn, rang, logo va video havolalarini oʻzgartirishingiz mumkin.</p>
             
             <div class="form-group">
-                <label>Maktab nomini oʻzgartirish:</label>
+                <label>Maktab nomi:</label>
                 <input type="text" id="editSchoolName" value="71-sonli Boshlangʻich Ta'lim Maktabi">
             </div>
             
             <div class="form-group">
-                <label>Umumiy maktab shiorini oʻzgartirish:</label>
-                <input type="text" id="editGeneralMotto" value='Maktab shiori: "Bilim — kelajak poydevori, odob — inson koʻrki!"'>
+                <label>Maktab shiori:</label>
+                <input type="text" id="editGeneralMotto" value='✨ Maktab shiori: "Bilim — kelajak poydevori, odob — inson koʻrki!" ✨'>
+            </div>
+
+            <div class="form-group">
+                <label>Logotip fayl nomi (masalan: logo.jpg):</label>
+                <input type="text" id="editLogoSrc" value="logo.jpg">
+            </div>
+
+            <div class="form-group">
+                <label>Sayt asosiy rangi (Tematik rang):</label>
+                <select id="editThemeColor" onchange="changeThemeColor(this.value)">
+                    <option value="#4d96ff">Koʻk (Asosiy)</option>
+                    <option value="#ff6b6b">Qizil / Pushti</option>
+                    <option value="#38a169">Yashil</option>
+                    <option value="#805ad5">Binafsha</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>1-Multfilm YouTube Embed havolasi:</label>
+                <input type="text" id="editVideo1" value="https://www.youtube.com/embed/dQw4w9WgXcQ">
             </div>
 
             <button class="btn" onclick="saveAdminChanges()">Saqlash</button>
         </div>
 
-        <!-- ABOUT SECTION -->
         <section id="about">
-            <h2>Maktab Tarixi</h2>
+            <h2>📖 Maktab Tarixi</h2>
             <p id="school-history">
-                71-sonli boshlangʻich ta'lim maktabi koʻp yillardan buyon yosh avlodga sifatli boshlangʻich ta'lim va mustahkam tarbiya berib kelmoqda. Maktabimizda oʻquvchilarning intellektual va ma'naviy rivojlanishi uchun barcha sharoitlar yaratilgan. Tajribali va mehribon pedagoglar jamoasi har bir bolaning iqtidorini ochishga intiladi.
+                71-sonli boshlangʻich ta'lim maktabi koʻp yillardan buyon yosh avlodga sifatli boshlangʻich ta'lim va mustahkam tarbiya berib kelmoqda. Maktabimizda oʻquvchilarning intellektual va ma'naviy rivojlanishi uchun barcha sharoitlar yaratilgan.
             </p>
         </section>
 
-        <!-- LEADERSHIP -->
         <section id="leadership">
-            <h2>Maktab Rahbariyati</h2>
+            <h2>👑 Maktab Rahbariyati</h2>
             <div class="grid-3">
                 <div class="card">
                     <div class="card-title">N. Tojiboyeva</div>
-                    <p style="color: #666;">Maktab direktori</p>
+                    <p style="color: #4a5568; font-weight: 600;">Maktab direktori</p>
                 </div>
                 <div class="card">
                     <div class="card-title">O. Bozorov</div>
-                    <p style="color: #666;">Oʻquv ishlar boʻyicha direktor oʻrinbosari</p>
+                    <p style="color: #4a5568; font-weight: 600;">Oʻquv ishlar boʻyicha oʻrinbosar</p>
                 </div>
                 <div class="card">
                     <div class="card-title">S. Yunusov</div>
-                    <p style="color: #666;">Ma'naviy-ma'rifiy ishlar boʻyicha direktor oʻrinbosari</p>
+                    <p style="color: #4a5568; font-weight: 600;">Ma'naviy-ma'rifiy ishlar boʻyicha oʻrinbosar</p>
                 </div>
             </div>
         </section>
 
-        <!-- CLASSES AND MOTTOS -->
         <section id="classes">
-            <h2>Sinflar va Ularning Shiorlari</h2>
+            <h2>🎒 Sinflar va Shiorlar</h2>
             <div class="grid-3">
-                <div class="card">
-                    <div class="class-badge">1-A</div>
-                    <p><em>"Shijoatli va intiluvchan oʻquvchilar!"</em></p>
-                </div>
-                <div class="card">
-                    <div class="class-badge">1-B</div>
-                    <p><em>"Doʻstlik va ahillik — bizning kuchimiz!"</em></p>
-                </div>
-                <div class="card">
-                    <div class="class-badge">2-A</div>
-                    <p><em>"Odob-axloq va bilimda yetakchimiz!"</em></p>
-                </div>
-                <div class="card">
-                    <div class="class-badge">2-B</div>
-                    <p><em>"Har bir kun — yangi marra va muvaffaqiyat!"</em></p>
-                </div>
-                <div class="card">
-                    <div class="class-badge">2-D</div>
-                    <p><em>"Zukkolik va topqirlikda tengsizmiz!"</em></p>
-                </div>
-                <div class="card">
-                    <div class="class-badge">3-A</div>
-                    <p><em>"Kelajak buyuk insonlari shu sinfda!"</em></p>
-                </div>
-                <div class="card">
-                    <div class="class-badge">3-B</div>
-                    <p><em>"Birdamlik va yuqori marralar sari!"</em></p>
-                </div>
-                <div class="card">
-                    <div class="class-badge">4-A</div>
-                    <p><em>"Maktabimiz faxri va eng a'lochi sinfi!"</em></p>
-                </div>
-                <div class="card">
-                    <div class="class-badge">4-B</div>
-                    <p><em>"Ilm va odobda hammaga namuna!"</em></p>
-                </div>
+                <div class="card"><div class="class-badge">1-A</div><p><em>"Shijoatli va intiluvchan!"</em></p></div>
+                <div class="card"><div class="class-badge">1-B</div><p><em>"Doʻstlik va ahillik!"</em></p></div>
+                <div class="card"><div class="class-badge">2-A</div><p><em>"Odob va bilimda yetakchi!"</em></p></div>
+                <div class="card"><div class="class-badge">2-B</div><p><em>"Yangi marra sari!"</em></p></div>
+                <div class="card"><div class="class-badge">2-D</div><p><em>"Zukko va topqirlar!"</em></p></div>
+                <div class="card"><div class="class-badge">3-A</div><p><em>"Kelajak buyuklari!"</em></p></div>
+                <div class="card"><div class="class-badge">3-B</div><p><em>"Birdamlik va yuqori marra!"</em></p></div>
+                <div class="card"><div class="class-badge">4-A</div><p><em>"Maktabimiz faxri!"</em></p></div>
+                <div class="card"><div class="class-badge">4-B</div><p><em>"Hammaga namuna!"</em></p></div>
             </div>
         </section>
 
-        <!-- QUIZZES -->
         <section id="quizzes">
-            <h2>Fanlar Boʻyicha Onlayn Testlar</h2>
+            <h2>🧠 Onlayn Test</h2>
             <div id="quiz-box">
-                <h3 id="quiz-question">Matematika: 7 + 8 necha boʻladi?</h3>
-                <div id="quiz-options" style="margin-top: 1rem;">
+                <h3 id="quiz-question" style="color: #2b6cb0; font-size: 1.1rem;">Matematika: 7 + 8 necha boʻladi?</h3>
+                <div id="quiz-options" style="margin-top: 0.8rem;">
                     <button class="quiz-option" onclick="checkAnswer(false)">A) 13</button>
                     <button class="quiz-option" onclick="checkAnswer(true)">B) 15</button>
                     <button class="quiz-option" onclick="checkAnswer(false)">C) 16</button>
                 </div>
-                <p id="quiz-result" style="margin-top: 1rem; font-weight: bold;"></p>
+                <p id="quiz-result" style="margin-top: 0.8rem; font-weight: bold;"></p>
             </div>
         </section>
 
-        <!-- GAMES -->
         <section id="games">
-            <h2>Bolalar Uchun Qiziqarli Xotira Oʻyini</h2>
-            <p>Bir xil sonlarni toping va xotirangizni sinang!</p>
-            <div class="game-grid" id="gameGrid">
-                <!-- Game cards inserted by JavaScript -->
-            </div>
-            <p id="gameStatus" style="text-align: center; font-weight: bold; margin-top: 1rem;"></p>
+            <h2>🎮 Xotira Oʻyini</h2>
+            <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Bir xil sonlarni toping!</p>
+            <div class="game-grid" id="gameGrid"></div>
+            <p id="gameStatus" style="text-align: center; font-weight: bold; margin-top: 0.8rem; color: #38a169;"></p>
         </section>
 
-        <!-- CARTOONS -->
         <section id="cartoons">
-            <h2>Tarbiyaviy Multfilmlar</h2>
+            <h2>🎈 Tarbiyaviy Multfilmlar</h2>
             <div class="grid-3">
                 <div>
-                    <h4 style="margin-bottom: 0.5rem;">Odobli bolakay</h4>
+                    <h4 style="margin-bottom: 0.4rem; font-size: 1rem;">Odobli bolakay</h4>
                     <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Tarbiyaviy Multfilm" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div>
-                    <h4 style="margin-bottom: 0.5rem;">Halollik va Ezgulik</h4>
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Tarbiyaviy Multfilm" frameborder="0" allowfullscreen></iframe>
+                        <iframe id="videoFrame1" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Multfilm" frameborder="0" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- RULES AND UNIFORM -->
         <section id="rules">
-            <h2>Odob-axloq Qoidalari va Maktab Formasi</h2>
+            <h2>⭐ Odob-axloq va Forma</h2>
             <div class="grid-3">
                 <div>
-                    <h3 style="color: var(--secondary-color); margin-bottom: 1rem;">Odob-axloq Qoidalari:</h3>
+                    <h3 style="color: #2b6cb0; font-size: 1.1rem; margin-bottom: 0.8rem;">Qoidalar:</h3>
                     <ul class="rule-list">
-                        <li>Maktabga oʻz vaqtida, toza va tartibli kiyinib kelish.</li>
-                        <li>Ustozlar va kattalarga hurmat bilan muomala qilish ("Assalomu alaykum").</li>
-                        <li>Sinfda tinchlikni saqlash va darsga xalaqit bermaslik.</li>
-                        <li>Maktab mulkini asrab-avaylash.</li>
-                        <li>Tengdoshlarga nisbatan xushmuomala va yordamsevar boʻlish.</li>
+                        <li>Maktabga oʻz vaqtida kelish.</li>
+                        <li>Ustozlarni hurmat qilish ("Assalomu alaykum").</li>
+                        <li>Sinfda tartib saqlash.</li>
                     </ul>
                 </div>
                 <div>
-                    <h3 style="color: var(--secondary-color); margin-bottom: 1rem;">Maktab Formasi Talablari:</h3>
+                    <h3 style="color: #2b6cb0; font-size: 1.1rem; margin-bottom: 0.8rem;">Forma:</h3>
                     <ul class="uniform-list">
-                        <li><strong>Oʻgʻil bolalar uchun:</strong> Toʻq koʻk rangli shim va пижак, oq koʻylak, qora poyabzal.</li>
-                        <li><strong>Qiz bolalar uchun:</strong> Toʻq koʻk rangli yubka va пижак (yoki sarafan), oq bluzka.</li>
-                        <li>Sochlar tartibli va yigʻilgan holatda boʻlishi lozim.</li>
-                        <li>Sport darslari uchun maxsus sport kiyimi talab etiladi.</li>
+                        <li><strong>Oʻgʻil bolalar:</strong> Toʻq koʻk shim, oq koʻylak.</li>
+                        <li><strong>Qiz bolalar:</strong> Toʻq koʻk yubka/sarafan, oq bluzka.</li>
                     </ul>
                 </div>
             </div>
@@ -478,23 +468,21 @@
     </div>
 
     <footer>
-        <p>&copy; 71-sonli Boshlangʻich Ta'lim Maktabi. Barcha huquqlar himoyalangan.</p>
+        <p>&copy; 71-sonli Boshlangʻich Ta'lim Maktabi. Barcha huquqlar himoyalangan. 🌟</p>
     </footer>
 
     <script>
-        // Quiz System
         function checkAnswer(isCorrect) {
             const resultElem = document.getElementById('quiz-result');
             if(isCorrect) {
-                resultElem.style.color = "green";
-                resultElem.textContent = "Barakalla! Toʻgʻri javob! 🎉";
+                resultElem.style.color = "#38a169";
+                resultElem.textContent = "🎉 Barakalla! Toʻgʻri javob!";
             } else {
-                resultElem.style.color = "red";
-                resultElem.textContent = "Notoʻgʻri, qaytadan harakat qilib koʻring! ❌";
+                resultElem.style.color = "#e53e3e";
+                resultElem.textContent = "❌ Notoʻgʻri, qayta urinib koʻring!";
             }
         }
 
-        // Simple Memory Game
         const numbers = [1, 1, 2, 2, 3, 3, 4, 4];
         let flippedCards = [];
         let matchedPairs = 0;
@@ -507,74 +495,69 @@
             const grid = document.getElementById('gameGrid');
             grid.innerHTML = '';
             const shuffled = shuffle([...numbers]);
-            
-            shuffled.forEach((num, index) => {
+            shuffled.forEach((num) => {
                 const card = document.createElement('div');
                 card.className = 'game-card';
-                card.dataset.number = num;
-                card.dataset.index = index;
-                card.textContent = '?';
-                card.onclick = () => flipCard(card);
+                card.textContent = '❓';
+                card.onclick = () => {
+                    if (flippedCards.length < 2 && !card.classList.contains('flipped')) {
+                        card.textContent = num;
+                        card.classList.add('flipped');
+                        card.style.background = '#3182ce';
+                        flippedCards.push({card, num});
+                        if (flippedCards.length === 2) {
+                            if (flippedCards[0].num === flippedCards[1].num) {
+                                matchedPairs++;
+                                flippedCards = [];
+                                if (matchedPairs === 4) {
+                                    document.getElementById('gameStatus').textContent = '🏆 Gʻalaba!';
+                                }
+                            } else {
+                                setTimeout(() => {
+                                    flippedCards[0].card.textContent = '❓';
+                                    flippedCards[1].card.textContent = '❓';
+                                    flippedCards[0].card.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+                                    flippedCards[1].card.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+                                    flippedCards[0].card.classList.remove('flipped');
+                                    flippedCards.classList.remove('flipped');
+                                    flippedCards = [];
+                                }, 800);
+                            }
+                        }
+                    }
+                };
                 grid.appendChild(card);
             });
         }
 
-        function flipCard(card) {
-            if (flippedCards.length < 2 && !card.classList.contains('flipped')) {
-                card.textContent = card.dataset.number;
-                card.classList.add('flipped');
-                card.style.background = '#002b5b';
-                flippedCards.push(card);
-
-                if (flippedCards.length === 2) {
-                    checkMatch();
-                }
-            }
-        }
-
-        function checkMatch() {
-            const [card1, card2] = flippedCards;
-            if (card1.dataset.number === card2.dataset.number) {
-                matchedPairs++;
-                flippedCards = [];
-                if (matchedPairs === 4) {
-                    document.getElementById('gameStatus').textContent = 'Tabriklaymiz! Siz gʻalaba qozondingiz! 🏆';
-                }
-            } else {
-                setTimeout(() => {
-                    card1.textContent = '?';
-                    card2.textContent = '?';
-                    card1.style.background = '#1a5f7a';
-                    card2.style.background = '#1a5f7a';
-                    card1.classList.remove('flipped');
-                    card2.classList.remove('flipped');
-                    flippedCards = [];
-                }, 1000);
-            }
-        }
-
-        // Admin Panel Toggle
         function toggleAdminPanel() {
-            const password = prompt("Admin panelga kirish uchun parolni kiriting:");
+            const password = prompt("Admin parolini kiriting:");
             if (password === "admin123") {
                 const panel = document.getElementById('adminPanel');
                 panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
             } else if (password !== null) {
-                alert("Notoʻgʻri parol!");
+                alert("Parol notoʻgʻri!");
             }
+        }
+
+        function changeThemeColor(color) {
+            document.documentElement.style.setProperty('--secondary-color', color);
         }
 
         function saveAdminChanges() {
             const newName = document.getElementById('editSchoolName').value;
             const newMotto = document.getElementById('editGeneralMotto').value;
+            const newLogo = document.getElementById('editLogoSrc').value;
+            const newVideo = document.getElementById('editVideo1').value;
 
             if(newName) document.getElementById('school-name').textContent = newName;
             if(newMotto) document.getElementById('general-motto').textContent = newMotto;
+            if(newLogo) document.getElementById('headerLogo').src = newLogo;
+            if(newVideo) document.getElementById('videoFrame1').src = newVideo;
 
-            alert("Ma'lumotlar muvaffaqiyatli saqlandi!");
+            alert("Oʻzgarishlar muvaffaqiyatli saqlandi! ✨");
         }
 
-        // Initialize Game on Load
         window.onload = initGame;
     </script>
 </body>
