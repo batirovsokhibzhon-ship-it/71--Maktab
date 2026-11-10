@@ -29,7 +29,6 @@
             min-height: 100vh;
         }
 
-        /* Орқа фондаги логотип (Watermark) */
         body::before {
             content: "";
             position: fixed;
@@ -89,7 +88,6 @@
             font-size: 1rem;
         }
 
-        /* Кичикроқ ва горизонтал меню (Бир қаторда, скролл қилинадиган) */
         nav {
             background-color: var(--secondary-color);
             display: flex;
@@ -254,7 +252,6 @@
             left: 0;
         }
 
-        /* Кенгайтирилган Админ панел */
         .admin-panel {
             display: none;
             background: #fffaf0;
@@ -320,7 +317,6 @@
         ✨ Maktab shiori: "Bilim — kelajak poydevori, odob — inson koʻrki!" ✨
     </div>
 
-    <!-- Горизонтал ва кичикроқ меню -->
     <nav>
         <a href="#about">📖 Tarix</a>
         <a href="#leadership">👑 Rahbariyat</a>
@@ -334,7 +330,6 @@
 
     <div class="container">
 
-        <!-- АДМИН ПАНЕЛЬ (Ранг, расм, видео va матнлар учун) -->
         <div id="adminPanel" class="admin-panel">
             <h3>⚙️ Toʻliq Admin Panel</h3>
             <p style="margin-bottom: 1rem; color: #b7791f; font-size: 0.9rem;">Bu yerdan matn, rang, logo va video havolalarini oʻzgartirishingiz mumkin.</p>
@@ -531,8 +526,8 @@
         }
 
         function toggleAdminPanel() {
-            const password = prompt("Admin parolini kiriting (parol: admin123):");
-            if (password === "admin123") {
+            const password = prompt("Admin parolini kiriting:");
+            if (password === "Sh22111985$") {
                 const panel = document.getElementById('adminPanel');
                 panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
             } else if (password !== null) {
