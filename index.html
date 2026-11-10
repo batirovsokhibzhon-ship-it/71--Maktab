@@ -89,7 +89,7 @@
             font-size: 1rem;
         }
 
-        /* Кичикроқ ва горизонтал меню */
+        /* Кичикроқ ва горизонтал меню (Бир қаторда, скролл қилинадиган) */
         nav {
             background-color: var(--secondary-color);
             display: flex;
@@ -104,7 +104,7 @@
         }
 
         nav::-webkit-scrollbar {
-            display: none; /* Телефонда скролл чизиғини яшириш */
+            display: none;
         }
 
         nav a {
@@ -254,7 +254,7 @@
             left: 0;
         }
 
-        /* Админ панель */
+        /* Кенгайтирилган Админ панел */
         .admin-panel {
             display: none;
             background: #fffaf0;
@@ -334,7 +334,7 @@
 
     <div class="container">
 
-        <!-- КЕНГАЙТИРИЛГАН АДМИН ПАНЕЛЬ (Ранг, расм, видео ва матнлар учун) -->
+        <!-- АДМИН ПАНЕЛЬ (Ранг, расм, видео va матнлар учун) -->
         <div id="adminPanel" class="admin-panel">
             <h3>⚙️ Toʻliq Admin Panel</h3>
             <p style="margin-bottom: 1rem; color: #b7791f; font-size: 0.9rem;">Bu yerdan matn, rang, logo va video havolalarini oʻzgartirishingiz mumkin.</p>
@@ -519,7 +519,7 @@
                                     flippedCards[0].card.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
                                     flippedCards[1].card.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
                                     flippedCards[0].card.classList.remove('flipped');
-                                    flippedCards.classList.remove('flipped');
+                                    flippedCards[1].card.classList.remove('flipped');
                                     flippedCards = [];
                                 }, 800);
                             }
@@ -531,7 +531,7 @@
         }
 
         function toggleAdminPanel() {
-            const password = prompt("Admin parolini kiriting:");
+            const password = prompt("Admin parolini kiriting (parol: admin123):");
             if (password === "admin123") {
                 const panel = document.getElementById('adminPanel');
                 panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
